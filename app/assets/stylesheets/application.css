@@ -1,0 +1,384 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ li {
+  list-style: none;
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+.box {
+  width: 350px;
+  height: 450px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.box-inner {
+  padding: 20px 26px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  color: #111111;
+}
+
+.box-email {
+  margin-bottom: 13px;
+}
+
+.box-password {
+  margin-bottom: 22px;
+}
+
+.box-email label, .box-password label {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.box-email input[type="email"], .box-password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+.column-left {
+  float: left;
+}
+
+.column-right {
+  float: right;
+}
+
+.box-password a {
+  font-size: 13px;
+}
+
+.box-login {
+  margin-bottom: 26px;
+}
+
+.box-login input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
+}
+
+.box-login input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f0c14b;
+}
+
+.legal-text {
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.remember {
+  font-size: 13px;
+  margin-top: 18px;
+  padding-left: 3px;
+}
+
+.box-newusr p {
+  text-align: center;
+  font-size: 12px;
+  color: #767676;
+  margin-bottom: 14px;
+}
+
+.box-newusr p span {
+  text-decoration: line-through;
+  text-decoration-color: #e7e7e7;
+}
+
+.box-newusr a {
+  display: block;
+  width: 100%;
+  height: 31px;
+  font-size: 13px;
+  color: #111;
+  line-height: 31px;
+  text-align: center;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border-radius: 3px;
+  border: 1px #a2a6ac solid;
+}
+
+.box-newusr a:hover {
+  background: #e7e9ec;
+}
+
+
+.box-name input[type="text"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+
+
+
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 14pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.reset {
+  margin-bottom: 20px;
+}
+
+
+.cp_sidebarmenu {
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 3.5em;
+	height: 100%;
+	-webkit-transition: width 0.6s ease;
+					transition: width 0.6s ease;
+	-webkit-transform: translateZ(0) scale(1,1);
+	border-right: 1px solid #e5e5e5;
+	background: #37474F;
+}
+.cp_sidebarmenu:hover {
+	overflow: visible;
+	width: 17em;
+}
+.cp_sidebarmenu ul {
+	margin: 7px 0;
+	padding: 0;
+	outline: 0;
+}
+.cp_sidebarmenu li {
+	position: relative;
+	display: block;
+	width: 17em;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+.cp_sidebarmenu li a {
+	position: relative;
+	display: table;
+	border-spacing: 0;
+	border-collapse: collapse;
+	text-decoration: none;
+	color: #ffffff;
+}
+.cp_sidebarmenu li:before {
+	content:"";
+	position: absolute;
+	top: 0px;
+	left: -17em;
+	height: 100%;
+	width: 17em;
+	background : rgba(240,98,146 ,0.5);
+	-webkit-transition: all 0.6s ease;
+					transition: all 0.6s ease;
+}
+.cp_sidebarmenu li:hover:before {
+	left:0;
+}
+.cp_sidebarmenu span {
+	position: relative;
+	display: table-cell;
+	width: 14em;
+	vertical-align: middle;
+}
+.cp_sidebarmenu > ul.control {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.cp_sidebarmenu ul li i {
+	font-size: 1.5em;
+	display: inline-block;
+	padding: 0.5em;
+	vertical-align: middle;
+}
+
+
+.conver {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+
+.user {
+  margin-top: 50px;
+  margin-left: 600px;
+}
+
+.message {
+  margin-top: 150px;
+  margin-left: 500px;
+}
+
+
+textarea {
+  resize: none;
+  width:400px;
+  height:200px;
+}
+
+
+.send {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 14pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #7ac8ce;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+
+.send:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.sending {
+  margin-top: 10px;
+  margin-left: 110px;
+}
+
+
+.back {
+  margin-top: 30px;
+  margin-left: 180px;
+}
+
+
+.conver_name {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 650px;
+}
+
+
+.us {
+  font-size: 40px;
+}
+
+
+.link3 {
+  font-size: 30px;
+}
+
+.mes {
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mes {
+  display: inline-block;
+  text-align:center;
+  padding: 20px 40px;
+  color: white;
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 4px 20px #ccc;
+  font-size: 22px;
+  margin: 50px 2.6%;
+}
+  .mes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 2px 20px #777;
+  }
+
+
+.green {
+  background-color: #99cc00;
+  border-bottom: 3px solid #669900;
+}
+
+
+.alert {
+  text-align: center;
+}
+
+
+.mess {
+  margin-left: 21%;
+  font-size: 40px;
+}

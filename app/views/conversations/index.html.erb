@@ -1,0 +1,14 @@
+
+  <div>
+    <h2 class="conver">メッセージを送った相手</h2>
+  </div>
+  <div>
+    <% @conversations.each do |conversation| %>
+      <div>
+        <% if conversation.target_user(current_user).present? %>
+          <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation), class: "conver_name"%>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+

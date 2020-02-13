@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="box-inner">
+
+    <h2>Forgot your password?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="box-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="reset">
+        <%= f.submit "パスワード再発行", class: "button" %>
+      </div>
+
+      <div class="box-login">
+        <%= f.submit "Sign up" %>
+      </div>
+      <div class="box-login">
+          <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
+  </div>
+</div>
