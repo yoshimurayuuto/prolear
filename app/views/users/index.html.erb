@@ -1,5 +1,6 @@
 <div class = "user">
   <h2 class = "us">ユーザー</h2>
+</div>
   <% @users.each do |user| %>
   <% if user.present? %>
     <% if user.id != current_user.id %>
@@ -8,8 +9,9 @@
           <% if user.name.present? %>
           <p class="link3"><%= user.name %></p>
           <% end %>
-          
-             <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post, class: "mes green" %>
+            <div class = "link4">
+             <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post, class: "mes" %>
+            </div>
             </div>
           
       </li>
@@ -17,4 +19,5 @@
     <% end %>
   <% end %>
   <% end %>
-</div>
+
+<a href="#top" class="topBtn" id="topBtn">TOP</a>

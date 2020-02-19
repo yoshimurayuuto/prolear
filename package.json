@@ -1,5 +1,7 @@
 {
   "name": "prolear",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
