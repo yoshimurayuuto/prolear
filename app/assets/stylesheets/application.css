@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
@@ -26,15 +27,19 @@
 }
 .box {
   width: 350px;
-  height: 450px;
+  height: 500px;
   margin: 60px auto 0;
   border-radius: 4px;
   border: 1px #ddd solid;
 }
 
+
+
+
 .box-inner {
   padding: 20px 26px;
 }
+
 
 h1 {
   font-weight: 400;
@@ -53,8 +58,23 @@ h1 {
   margin-bottom: 22px;
 }
 
+.edit-email {
+  margin-bottom: 13px;
+}
+
+.edit-password {
+  margin-bottom: 22px;
+}
+
 .box-email label, .box-password label {
-  font-weight: 700;
+  font-weight: 700px;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.edit-email label, .edit-password label {
+  font-weight: 700px;
   font-size: 13px;
   padding-left: 2px;
   padding-bottom: 2px;
@@ -71,9 +91,18 @@ h1 {
   padding: 0 7px;
 }
 
-.column-left {
-  float: left;
+.edit-email input[type="email"], .edit-password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 30%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
 }
+
+
 
 .column-right {
   float: right;
@@ -94,6 +123,7 @@ h1 {
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   border-radius: 3px;
   border: 1px #a88734 solid;
+  margin-top: 20px;
 }
 
 .box-login input[type="submit"]:hover {
@@ -146,6 +176,17 @@ h1 {
   border-style: none;
   box-sizing: border-box;
   width: 100%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+.edit-name input[type="text"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 30%;
   height: 31px;
   border: 1px solid #a6a6a6;
   box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
@@ -264,13 +305,19 @@ h1 {
 
 
 .user {
-  background-color: #f0fff0;
+  
+  font-size: 20px;
+  display: block;
+  background-color:#e6e6fa;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #eee;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
 }
 
 .us {
   font-size: 40px;
-  
-  margin-left: 650px;
 }
 
 
@@ -448,36 +495,411 @@ textarea {
 
 
 
-.topBtn {
-  position:fixed; /*固定*/
-  bottom:20px; /*場所を右下に移動*/
-  right:20px; /*場所を右下に移動*/
-  display:block; /*aタグをblock要素に変更*/
-  background-color:rgba(0,0,0,0.5); /*以下、デザインはご自由に！！*/
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:11px;
-  width:60px;
-  height:60px;
-  text-align:center;
-  line-height:22px;
-  border-radius:30px;
-  padding-top:30px;
-  box-sizing:border-box;
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  background: #3f98ef;
+  opacity: 0.6;
+  border-radius: 50%;
 }
-.topBtn:before {
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   content:'\25B2';
-  position:absolute;
-  top:10px;
-  left:0;
-  width:100%;
-  text-align:center;
-  font-size:20px;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
 }
-.topBtn:hover {
-  opacity:0.7;
+.menu {
+  margin: 15px;
+}
+.menu > ol {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+}
+.menu > ol > li {
+  background: #3c3c3c;
+  border-left: 5px solid var(--gradient-color);
+  margin-bottom: 1px;
+  position: relative;
+  transition: 0.5s;
+}
+.menu > ol > li:nth-child(1) {
+  --accent-color: #FDA085;
+  --gradient-color: #F6D365;
+}
+.menu > ol > li:nth-child(2) {
+  --accent-color: #BFF098;
+  --gradient-color: #6FD6FF;
+}
+.menu > ol > li:nth-child(3) {
+  --accent-color: #EA8D8D;
+  --gradient-color: #A890FE;
+}
+.menu > ol > li:nth-child(4) {
+  --accent-color: #D8B5FF;
+  --gradient-color: #1EAE98;
+}
+.menu > ol > li:nth-child(5) {
+  --accent-color: #C6EA8D;
+  --gradient-color: #FE90AF;
+}
+.menu > ol >li:nth-child(6) {
+  --accent-color: rgb(141, 174, 234);
+  --gradient-color: rgb(75, 175, 179);
+}
+
+.menu > ol > li a {
+  color: #FBFBFB;
+  display: block;
+  padding: 15px;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.menu > ol > li a:not(:last-child):before {
+  content: "\f078";
+  font-family: fontAwesome;
+  font-size: 0.75em;
+  line-height: 50px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 0.5s;
+}
+.menu > ol > li:focus,
+.menu > ol > li:focus-within,
+.menu > ol > li:hover {
+  z-index: 100;
+}
+.menu > ol > li:focus:after,
+.menu > ol > li:focus-within:after,
+.menu > ol > li:hover:after {
+  background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
+  max-width: 800px;
+}
+.menu > ol > li:focus .sub-menu,
+.menu > ol > li:focus-within .sub-menu {
+  max-height: 500px;
+}
+.menu > ol > li:focus a:before,
+.menu > ol > li:focus-within a:before {
+  transform: rotate(-180deg);
+}
+.menu > ol > li:after {
+  background: #3c3c3c;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.5s;
+  max-width: 0;
+  overflow: hidden;
+}
+.menu > ol .sub-menu {
+  border-left: 1px solid #FBFBFB;
+  margin-left: 22.5px;
+  list-style: none;
+  max-height: 0px;
+  overflow: hidden;
+  padding-left: 7.5px;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+}
+.menu > ol .sub-menu li {
+  font-size: 0.9em;
+}
+.menu > ol .sub-menu li:hover,
+.menu > ol .sub-menu li a:focus {
+  background: rgba(60, 60, 60, 0.3);
+}
+.menu > ol .sub-menu li a:after {
+  bottom: 5px;
+  height: 1px;
+}
+.menu > ol .sub-menu li a:hover:after,
+.menu > ol .sub-menu li a:focus:after {
+  width: 15px;
+}
+@media (min-width: 600px) {
+  a:focus,
+  a:hover {
+    position: relative;
+  }
+  a:focus:after,
+  a:hover:after {
+    width: 50px;
+  }
+  a:after {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .menu {
+    margin: 0;
+    /* margin-top: 40vh; */
+  }
+  .menu > ol {
+    display: block;
+    max-width: none;
+    text-align: center;
+  }
+  .menu > ol > li {
+    border-top: 5px solid var(--accent-color);
+    border-left: 0;
+    display: inline-block;
+    margin-left: -5px;
+    vertical-align: top;
+    width: 120px;
+  }
+  .menu > ol > li:hover:after,
+  .menu > ol > li:focus:after,
+  .menu > ol > li:focus-within:after {
+    background: linear-gradient(to bottom, var(--accent-color), var(--gradient-color));
+    border-radius: 3px;
+    top: -15px;
+    bottom: -15px;
+    left: -15px;
+    right: -15px;
+  }
+  .menu > ol > li:hover .sub-menu,
+  .menu > ol > li:focus .sub-menu,
+  .menu > ol > li:focus-within .sub-menu {
+    max-height: 750px;
+  }
+  .menu > ol > li a:not(:last-child):before {
+    right: 12.5px;
+  }
+  .menu > ol > li:hover a:before {
+    transform: rotate(-180deg);
+  }
+  .menu > ol .sub-menu {
+    border-left: 0;
+    margin: 15px -15px -15px;
+    padding-left: 0;
+  }
+}
+@media (min-width: 775px) {
+  .menu > ol > li {
+    width: 150px;
+  }
+  .menu > ol > li a:not(:last-child):before {
+    right: 25px;
+  }
+}
+
+
+.intro {
+  text-align: center;
+  
+}
+.chat {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.cli {
+  text-align: center;
+}
+
+.tops {
+  background-color: #ffb6c1;
 }
 
 
 
+#site-footer {
+  padding: 25px 0;
+  font-size: 85%;
+  background-color: #fffafa;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.exp {
+  text-align: center;
+}
+
+.ex {
+  text-align: center;
+}
+
+
+.pi {
+  width: 150px;
+  height: 120px;
+  border-radius: 50%;
+  margin-left: 150px;
+}
+
+
+.co {
+  margin-left: 140px;
+  font-size: 50px;
+}
+
+.ac {
+  text-align: center;
+}
+
+
+.fe {
+  margin-left: 600px;
+}
+
+
+.pict {
+  
+}
+
+
+ 
+
+
+.rr {
+  text-align: center;
+  font-size: 500px;
+}
+
+
+
+
+
+
+.introduce {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.user_introduce {
+  margin-top: 10px;
+}
+
+
+.INTO {
+  margin-left: 46%;
+}
+
+
+
+
+.flex_test-box {
+  
+  display: flex; 
+  width: 100%;             /* フレックスボックスにする */
+  
+}
+
+.flex_test-item {
+  padding: 10px;
+  color:  #fff;               /* 文字色 */
+  margin:  10px;              /* 外側の余白 */
+  border-radius:  5px;        /* 角丸指定 */
+  width: 50%;                 /* 幅指定 */
+}
+
+.flex_test-item:nth-child(1) {
+  background-color:  #2196F3; /* 背景色指定 */
+}
+
+.flex_test-item:nth-child(2) {
+  background-color:  #4CAF50; /* 背景色指定 */
+}
+
+
+.birth_date_field {
+  margin-left: 600px;
+  margin-bottom: 500px;
+}
+
+
+
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+.items .item {
+  width: 50%;
+}
+
+
+.items3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.items3 .item {
+  width: 30%;
+}
+
+
+.form-group{
+  margin-bottom: 35px;
+  margin-left: 200px;
+}
+
+.set_edit {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.Back {
+  margin-left: 50%;
+}
+
+.us_new {
+  margin-left: 38%;
+}
+
+.sh {
+  margin-left: 40%;
+}
+
+
+
+.video-container {
+  position: relative;
+}
+
+.video-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); 
+}
+
+video {
+  width: 100%;
+}

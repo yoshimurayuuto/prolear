@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_133725) do
+ActiveRecord::Schema.define(version: 2020_02_19_171300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2020_02_13_133725) do
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id", "recipient_id"], name: "index_conversations_on_sender_id_and_recipient_id", unique: true
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_feeds_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -45,10 +53,16 @@ ActiveRecord::Schema.define(version: 2020_02_13_133725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "image"
+    t.boolean "admin", default: false
+    t.date "birth_date"
+    t.text "introduce"
+    t.integer "sex"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "feeds", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
 end

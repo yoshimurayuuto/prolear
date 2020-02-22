@@ -1,13 +1,19 @@
 <div class = "user">
-  <h2 class = "us">ユーザー</h2>
+  <h2 class = "us" id="top">ユーザー</h2>
 </div>
+
   <% @users.each do |user| %>
   <% if user.present? %>
     <% if user.id != current_user.id %>
       <li>
         <div class="item">
           <% if user.name.present? %>
-          <p class="link3"><%= user.name %></p>
+          
+          <p class="pict">
+          <% if user.image && user.image.url %>
+            <%= image_tag user.image.url %></p>
+          <% end %>
+          <p class="link3"><%= link_to user.name, user_path(user.id) %></p>
           <% end %>
             <div class = "link4">
              <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post, class: "mes" %>
@@ -19,5 +25,7 @@
     <% end %>
   <% end %>
   <% end %>
+ 
 
-<a href="#top" class="topBtn" id="topBtn">TOP</a>
+
+<div id="page_top"><a href="#"></a></div>

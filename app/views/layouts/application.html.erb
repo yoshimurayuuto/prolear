@@ -8,27 +8,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   
+
+  <%= yield %>
   <nav class="cp_sidebarmenu">
     <ul>
     <% if user_signed_in? %>
     <li><%= link_to "会話", conversations_path %></li>
     <li><%= link_to "ユーザー一覧", users_path %></li>
     <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+    <li><%= link_to "Eメール or パスワード変更", edit_user_registration_path %></li>
+      <% if current_user.name.present? %>
+        <li><%= link_to "情報変更", enter_users_path %></li>
+      <% else%>
+        <li><%= link_to "情報設定", edit_user_path(current_user.id) %></li>
+      <% end %>
     <% else %>
     <li><%= link_to "新規登録", new_user_registration_path %></li>
     <li><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
-    </li>
+    </ul>
     </nav>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    
   
 </html>

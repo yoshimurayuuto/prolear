@@ -1,0 +1,24 @@
+<div class= "sh">
+
+  <p class= "na">名前:<%= @user.name %></p>
+
+  <p id="notice"><%= notice %></p>
+
+
+  <% s = @user.birth_date %>
+
+  <% if @user.birth_date.present? %>
+  <p class ="hi">
+    年齢:<%= (Date.today.strftime('%Y%m%d').to_i - s.strftime('%Y%m%d').to_i) / 10000 %>
+  <% end %>
+  </p>
+
+  <p>性別:<%= @user.sex %></p>
+  <p>自己紹介:<%= @user.introduce %></p>
+  <p>プロフィール写真</p>
+  <% if @user.image.present? %>
+    <%= image_tag @user.image.url  %>
+  <% else %>
+    <%= image_tag('/assets/photo.png', width: 96, class: 'profile-image') %>
+  <% end %>
+</div>

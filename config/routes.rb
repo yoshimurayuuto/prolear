@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  root 'conversations#index'
-  resources :users, only: [:index]
-  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :feeds
+  root 'tops#index'
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users do
+    collection do
+      get :enter
+    end
+  end
+
   resources :conversations do
     resources :messages
   end
