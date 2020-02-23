@@ -1,33 +1,46 @@
 
+<div class= "message">
   <% if @over_ten %>
-    <%= link_to '以前のメッセージ', '?m=all' %>
+    <div class="Previously"><%= link_to '以前のメッセージ', '?m=all' %></div>
   <% end %>
-  <div class="ui">
+  
     <% @messages.each do |message| %>
       <% if message.body.present? %>
-          <div class="content">
-            <div class="header"><strong class="names"><%= message.user.name %></strong>
-             <span class= "time"><%= message.message_time %></span>
-            </div>
-            <div class="list">
-              <div class="item">
-                <%= message.body %> /
+         
+         
+            <% if current_user == message.user %>
+              <div class= "right">
                 <% if message.user == current_user %>
-                  <%= message.read ? '既読' : '未読' %>
-                <% end %>  
+                    <%= message.read ? '既読' : '未読' %></br>
+                <% end %> 
+                <%= message.message_time %>
+                <div class= "www"><%= message.body %></div>
+                 
               </div>
-            </div>
-          </div>
+            <% else %>
+              <div class= "left">
+                <% if message.user == current_user %>
+                  <%= message.read ? '既読' : '未読' %></br>
+                <% end %>  
+                <%= message.message_time %>
+                <%= message.user.name %>
+                <div class= "www"><%= message.body %></div>
+              </div>
+            <% end %>
+         
         
       <% end %>
     <% end %>
-  </div>
+  
 
-  <div class="con">
+
+
+
+
     <%= form_with(model: [@conversation, @message]) do |f| %>
-      <div class="field">
+  
         <%= f.text_area :body, class: "form-control" %>
-      </div>
+      
         <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
       <div class = "sending">
         <%= f.submit "メッセージを送る", class: "send" %>
@@ -36,4 +49,6 @@
       <div class = "cp_link">
         <%= link_to "戻る", conversations_path %>
       </div>
-  </div>
+ 
+ 
+</div>

@@ -1,37 +1,52 @@
-<div class= "us_new">
-  <h1>情報設定</h1>
-  <%= form_with(model: @user, local: true) do |f| %> 
-  <div> 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<body class= "us_new">
+  <div class= "bo">
+    <p><%= notice %></p>
+    <h1>情報設定</h1>
+    <%= form_with(model: @user, local: true) do |f| %> 
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div> 
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= f.label :birth_date %>
+      <%= raw sprintf(
+                f.date_select(
+                  :birth_date,
+                  use_month_numbers: true,
+                  start_year: 1945,
+                  end_year: (Time.now.year),
+                  default: Date.new(1989, 1, 1),
+                  date_separator: '%s'),
+                '年 ', '月 ') + '日' %>
+    </div>
+    <div>
+      <%= f.label :sex %>
+      <%= f.select :sex, ["女性","男性"], {include_blank: '性別'}, class: 'User' %>
+    </div>
+    <div>
+      <%= f.label :introduce %></br>
+      <%= f.text_area :introduce, placeholder: '・仕事の内容&#13;&#10;・趣味&#13;&#10;・パーソナリティなど'.html_safe  %>
+    </div>
+      <%= f.submit "基本情報を登録する" %>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-  <div>
-    <%= f.label :birth_date %>
-    <%= raw sprintf(
-              f.date_select(
-                :birth_date,
-                use_month_numbers: true,
-                start_year: 1945,
-                end_year: (Time.now.year),
-                default: Date.new(1989, 1, 1),
-                date_separator: '%s'),
-              '年 ', '月 ') + '日' %>
-  </div>
-  <div>
-    <%= f.label :sex %>
-    <%= f.select :sex, ["女性","男性"], {include_blank: '性別'}, class: 'User' %>
-  </div>
-  <div>
-    <%= f.label :introduce %></br>
-    <%= f.text_area :introduce, placeholder: '・仕事の内容&#13;&#10;・趣味&#13;&#10;・パーソナリティなど'.html_safe  %>
-  </div>
-    <%= f.submit "Create my account" %>
-  <% end %>
-</div>
+</body>
 
 
 

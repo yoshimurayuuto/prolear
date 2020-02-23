@@ -1,0 +1,33 @@
+<body class= "matching">
+<div class="match">
+  <h1 class="match_h1">マッチング</h1>
+  <% if @relationships.present? %>
+  <% @relationships.each do |relationship| %>
+    <% if current_user.id == relationship.follower_id %>
+   
+      <% if Relationship.where(follower_id:relationship.followed_id, followed_id:current_user.id).present? %>
+      
+        <% @user = User.find(relationship.followed_id) %><br>
+        <div class="mat">
+          <div class="prof">
+            <% if @user.image.url.present?%>
+              <%= image_tag @user.image.url %>
+            <% else %>
+              <%= image_tag('/assets/photo.png', width: 96, class: 'profile-image') %>
+            <% end %>
+          </div>
+          <div class= "us_na">
+            <%= @user.name %>
+          </div>
+          <div>   
+            <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post, class: "mes" %>
+          </div>
+        </div>
+
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% end %>
+
+</body>

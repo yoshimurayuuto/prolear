@@ -2,6 +2,10 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
+  def after_sign_up_path_for(resource)
+    enter_users_path
+  end
+
   protected
   # 追記する
   def update_resource(resource, params)

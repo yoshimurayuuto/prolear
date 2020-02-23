@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :feeds
   root 'tops#index'
@@ -7,8 +9,11 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :enter
+      get :matching
     end
   end
+
+  resources :relationships, only: [:create, :destroy]
 
   resources :conversations do
     resources :messages

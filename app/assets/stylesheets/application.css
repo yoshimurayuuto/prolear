@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap/dist/css/bootstrap.min
+ 
  *= require_tree .
  *= require_self
  */
@@ -34,7 +34,11 @@
 }
 
 
-
+.form-control {
+  width: 400px;
+  height: 500px;
+  margin-left: 37%;
+}
 
 .box-inner {
   padding: 20px 26px;
@@ -352,8 +356,7 @@ textarea {
 }
 
 .sending {
-  margin-top: 10px;
-  margin-left: 110px;
+  text-align: center;
 }
 
 
@@ -369,6 +372,7 @@ textarea {
   margin-left: 180px;
   margin-top: 50px;
   font-size: 20px;
+  margin-left: 700px;
 }
 .cp_link::before,
 .cp_link::after {
@@ -395,7 +399,7 @@ textarea {
 .conver_name {
   font-size: 30px;
   margin-top: 20px;
-  margin-left: 650px;
+  margin-left: 300px;
 }
 
 
@@ -448,7 +452,8 @@ textarea {
   transition: 300ms ease-in-out;
   box-shadow: 0px 4px 20px #ccc;
   font-size: 22px;
-  margin: 50px 2.6%;
+  margin-top: 20px;
+  
 }
   .mes:hover {
     transform: translateY(-3px);
@@ -478,9 +483,6 @@ textarea {
   
 }
 
-.time {
-  margin-left: 300px;
-}
 
 .names {
   margin-left: 670px;
@@ -488,7 +490,7 @@ textarea {
 
 
 .con {
-  margin-left: 560px;
+  margin-left: 250px;
   margin-top: 50px;
 }
 
@@ -761,8 +763,9 @@ textarea {
 
 
 .co {
-  margin-left: 140px;
+  margin-left: 100px;
   font-size: 50px;
+  font-family: 'Zapfino',sans-serif;
 }
 
 .ac {
@@ -878,11 +881,13 @@ textarea {
 }
 
 .us_new {
-  margin-left: 38%;
+  background-color: #fffff0;
+  margin-left: 35%;
 }
 
 .sh {
-  margin-left: 40%;
+  margin-left: 35%;
+  background-color: #fff5ee;
 }
 
 
@@ -900,6 +905,173 @@ textarea {
   background-color: rgba(255, 255, 255, 0.8); 
 }
 
-video {
+.video {
   width: 100%;
 }
+
+.match {
+  margin-left: 42%;
+}
+
+.matching {
+  background-color: #db7093;
+}
+
+.mat {
+  background-color: #ccc;
+  width:  190px;
+}
+
+.prof {
+  padding-left: 20px;
+}
+
+.us_na {
+  text-align: center;
+}
+
+.field {
+  margin-right: 700px;
+}
+
+
+
+
+.right {
+  margin-left: 80%;
+}
+
+.left {
+  margin-left: 10%;
+}
+
+
+.bo {
+  margin-right: 800px;
+  margin-top: 100px;
+  padding-left: 40px;
+  padding-top: 20px;
+  width: 45%;
+  border: 1px solid #ccc; /* 枠線 */
+  background-color: #fff; /* 背景色 */
+  box-shadow: 1px 1px 2px #ccc;
+  height: 700px;
+}
+
+.heart {
+  color: red;
+}
+
+.fo {
+  display:inline-block;
+}
+
+
+
+.loved {
+  background-image: url("/parts7.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+  margin-left: 690px;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+}
+
+
+
+.love {
+  background-image: url("/parts5.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+  margin-left: 690px;
+}
+
+
+
+.www {
+  display: inline-block;
+  word-wrap: break-word;
+  margin: 2em auto; 
+  padding: 1em 1.5em;
+  width: 200px; /*幅の調節*/
+  color: #777777; /* 文字色 */
+  background-color: #fff; /* 背景色 */
+  border: 4px solid #f6bfbc; /*線の太さ・色*/
+  border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+}
+
+.message {
+  background-color: #fffff0;
+}
+
+.Previously {
+  background-color: #add8e6;
+  text-align: center;
+}
+
+
+.meeting {
+  margin-left: 60px;
+  margin-top: 50px;
+}
+
+.na {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #7ED1E6;
+}
+
+.gender {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #7ED1E6;
+}
+
+.Introduction {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #7ED1E6;
+  word-break: keep-all;
+}
+
+.follower {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #7ED1E6;
+}
+
+.follow {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #7ED1E6;
+}
+
+.jiko {
+  word-break: keep-all;
+}
+
+
+
+.match_h1{
+  position: relative;
+  display: inline-block;
+  padding: 0 2.5em;
+  text-align: center;
+  }
+  
+  .match_h1:before, .match_h1:after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 15%;
+  height: 1px;
+  background-color: #7ED1E6;
+  }
+  
+  .match_h1:before {left:0;}
+  .match_h1:after {right: 0;}

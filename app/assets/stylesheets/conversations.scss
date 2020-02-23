@@ -4,10 +4,16 @@
 
 
 .midashi {
-  background-color: #e6e6fa;
+  background-color: #faf0e6;
   height: 50px;
 }
 
 .other {
-  background-color: #f0ffff;
+  
+  margin: 2em auto;  
+  width: 50%; /*幅の調節*/
+  color: #666666; /*文字色*/
+  background-color: #f7f7f7; /*背景色*/
+  border: 2px solid #ccc; /*線の太さ・色*/
+  border-radius: 8px; 
 }
